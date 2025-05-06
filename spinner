@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Create an array of spin characters
+spin='-\|/'
+
+dots="⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏"
+
+# Loop forever (until break is encountered) and print a dot each time
+while true
+do
+  # Print a character from the array
+  printf "\r${dots:i++%${#dots}:1}"
+  sleep 1
+done
+
+# loop 10 times and print a dot each time
+# for i in {1..10}
+# do
+#   # print a character from the array
+#   printf "\r${spin:i++%${#spin}:1}"
+#   sleep 1
+# done
+# echo ""

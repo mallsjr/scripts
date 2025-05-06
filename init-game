@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# create directories for libraries and assets
+echo "creating libraries and assests directories..."
+mkdir -p "$(pwd)/libraries"
+mkdir -p "$(pwd)/assets"
+
+# create main.lua file
+echo "creating main.lua and appending default love2d functions..."
+touch "main.lua"
+echo "function love.load() end" >> main.lua
+echo "function love.update(dt) end" >> main.lua
+echo "function love.draw() end" >> main.lua
+
+# create .editorconfig file
+echo "creating editorconfig and setting options..."
+touch ".editorconfig"
+echo "[*.lua]" >> .editorconfig
+echo "indent_style = space" >> .editorconfig
+echo "indent_size = 2" >> .editorconfig
+echo "trim_trailing_whitespace = true" >> .editorconfig
+
+echo "completed!"
