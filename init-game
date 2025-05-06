@@ -1,9 +1,28 @@
 #!/bin/bash
 
+#!/bin/bash
+
+# Usage function to print to stderr
+usage() {
+  echo "Usage: $(basename $0) directory_name" >&2
+  exit 1
+}
+
+if [ $# -eq 0 ]; then
+  echo "Error: No directory name provided." >&2
+  usage # Print usage and exit
+fi
+
+directory_name="$1"
+
+echo "creating $directory_name..."
+mkdir -p "$directory_name"
+cd "$directory_name"
+
 # create directories for libraries and assets
-echo "creating libraries and assests directories..."
-mkdir -p "$(pwd)/libraries"
-mkdir -p "$(pwd)/assets"
+echo "creating libraries and assets directories..."
+mkdir -p "libraries"
+mkdir -p "assets"
 
 # create main.lua file
 echo "creating main.lua and appending default love2d functions..."
