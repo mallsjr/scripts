@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#!/bin/bash
-
 # Usage function to print to stderr
 usage() {
   echo "Usage: $(basename $0) directory_name" >&2
